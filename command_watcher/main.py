@@ -4,6 +4,7 @@ from functools import partial
 from lya import lya
 from rx import Observable
 
+
 from command_watcher.launcher import observe_process
 from command_watcher.observer import CommandObserver
 
@@ -17,7 +18,7 @@ def start():
     args = parser.parse_args()
 
     Observable.create(partial(observe_process, command=args.command))\
-        .subscribe(CommandObserver(cfg.telegram.bot_token, cfg.telegram.chat_id))
+        .subscribe(CommandObserver(cfg.telegram.bot_token, cfg.telegram.chat_id, cfg.video_source))
 
 
 if __name__ == '__main__':
