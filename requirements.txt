@@ -1,0 +1,4 @@
+python-telegram-bot
+Rx
+opencv-python
+layered-yaml-attrdict-config
