@@ -2,12 +2,14 @@ from typing import Any
 from io import BytesIO
 
 import telegram
-from logging import getLogger
+from logging import getLogger, StreamHandler, DEBUG
 from rx import Observer
 import cv2
 
 
 logger = getLogger('observer')
+logger.setLevel(DEBUG)
+logger.addHandler(StreamHandler())
 
 
 class CommandObserver(Observer):
